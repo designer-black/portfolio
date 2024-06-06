@@ -1,0 +1,25 @@
+
+// Functions Methods
+
+    * Function examples 
+    * hoisting
+    * default parameters
+    * recursion
+    * function expression
+    * arrow function
+    * Variable arguments - Rest parameters
+    * Generators
+
+// Operators Methods
+
+    * Assignment Operators  // +=, -=
+    * Arithmatic Operators  // +, -, *, %, /
+    * Logical Operators  // &&, ||
+    * Equality Operators // ==, ===, !==
+    * Bitwise Operators  // 
+    
+// Logical Operators
+
+    * AND operator   => && ( A and B )
+    * OR operator    => || ( A or B )
+    * Null's operator => ?? ( !A or B )
