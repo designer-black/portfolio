@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traing Work</title>
 
+    <!-- Google Font(Outfit) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./style/style.css" />
+
+    <script>
+
+      window.addEventListener("load", function(){
+        let x = document.body;
+        let y = x.children[0];
+
+        y.innerHTML = ` <a class="mu-button"> Find Mee </a>`;
+      });
+
+    </script>
+
   </head>
   <body>
-    <h1>halo..., I am Anand, Iam learning javascript</h1>
-    <script src="./javascript/main.js"></script>
+    <h4 onclick="confirm('Are you want')">halo..., I am Anand, Iam learning javascript</h4>
+
+
+    <!-- <script src="./javascript/main.js"></script> -->
+    <!-- <script src="./javascript/dom.js"></script> -->
   </body>
 </html>
