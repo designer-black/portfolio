@@ -7,29 +7,78 @@
 
     <!-- Google Font(Outfit) -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- Style Sheet -->
     <link rel="stylesheet" href="./style/style.css" />
-
-    <script>
-
-      window.addEventListener("load", function(){
-        let x = document.body;
-        let y = x.children[0];
-
-        y.innerHTML = ` <a class="mu-button"> Find Mee </a>`;
-      });
-
-    </script>
-
   </head>
   <body>
-    <h4 onclick="confirm('Are you want')">halo..., I am Anand, Iam learning javascript</h4>
+    <header id="header">
+      <div class="header-wrapper">
+        <div class="row header-overlay">
+          <div class="container">
+            <div class="header-col-wrap d-grid gr-col-2">
+              <div class="mu-cv-info align-self-center">
+                <div class="email-clip">
+                  <p class="mu-email-text"><a href="mailto:karuppasamy93472@gmail.com" target="_blank" rel="noopener noreferrer">karuppasamy93472@gmail.com</a></p>
+                  <button class="copy-mail-txt">copy</button>
+                </div>
+                <div class="mu-cv-button">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="mu-button">CV</a>
+                </div>
+              </div>
+              <div class="mu-contact-info jus-self-end align-self-center">
+                <ul class="social-items">
+                  <li class="socil-item">
+                    <a href="#">LinkdIn</a>
+                  </li>
+                  <li class="socil-item">
+                    <a href="#">LinkdIn</a>
+                  </li>
+                  <li class="socil-item">
+                    <a href="#">LinkdIn</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <main id="primary">
+      <div class="container">
+        <h4 onclick="confirm('Are you want')">
+          halo..., I am Anand, Iam learning javascript
+        </h4>
+
+        <section class="form-section">
+          <div class="row padding-top padding-bottom">
+            <!-- <form action="/"> -->
+              <input id="input_val" type="text" placeholder="Enter Your List" required>
+              <button id="button_sub" type="submit">Add by List</button>
+              <!-- <button id="button_clear" type="submit">Clear</button> -->
+            <!-- </form> -->
+
+            <div id="response" class="res"></div>
+
+            <ul id="items" class="items">
+              <li class="item">All 👍</li>
+              <li class="item">Test 😎</li>
+              <li class="item">Sell 😘</li>
+            </ul>
+
+          </div>
+        </section>
+      </div>
+    </main>
 
     <!-- <script src="./javascript/main.js"></script> -->
-    <!-- <script src="./javascript/dom.js"></script> -->
+    <script src="./javascript/dom.js"></script>
   </body>
 </html>
