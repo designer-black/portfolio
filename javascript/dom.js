@@ -1,118 +1,101 @@
-// console.log(console);
+const inputValue = document.getElementById("input_val");
+const submitBtn = document.getElementById("button_sub");
+const responseDiv = document.getElementById("response");
+let responseUl = document.getElementById("items");
+// const responseLi = document.querySelectorAll(".items > .item");
 
-// console.assert("red");
-// console.error("red");
-// console.info("red");
-// console.warn("red");
-// console.log(window.document.body.innerHTML);
+let numVal = Number(inputValue);
+const createDiv = document.createElement("div");
+createDiv.className = "add-div";
 
-// window.open("https://designer-black.github.io/Happy-Birthday-Mrs-Anand/");
+responseUl.insertAdjacentElement("afterend", createDiv);
 
-// console.log(window.screen);
+// Remove Button with Event
 
-// console.log(location);
+// console.log(inputValue.placeholder = "Your Items");
+// console.log(typeof numVal);
 
-setInterval(
-  () => {
-    // location.assign("https://designer-black.github.io/Happy-Birthday-Mrs-Anand/");
-  },
-  5000,
-  50,
-  70
-);
+// let ageVal = prompt("what's your age")
 
-// document.body.children[0].innerText  = "I am Anand Here";
-// console.dir(document.body.children[0].innerText  = "I am Anand Here");
+// inputValue.setAttribute("value", ageVal);
+// let parseIntVal = parseInt(inputValue, 10);
+// console.log(typeof parseIntVal, parseIntVal);
+let teSt = responseUl.children;
+[...teSt].forEach((item) => {
+  item.style.color = "red";
+});
 
-// const val1 = prompt("Enter Your name:");
-// const val2 = prompt("Where are you from");
+// Array.from.teSt.forEach(element => {
+//   element.style.color = "blue";
+// });
 
-// let assignVal = `i'm ${val1} and, i'm From ${val2}`
+// console.log(teSt, teSt.length);
+for (let valuItem of teSt) {
+  valuItem.innerHTML += `<i class="remove" onclick="remoVe(event)"></i>`;
+}
+// responseLi.forEach((val) => {
+//   console.log(val.appendChild(removeBtn));
+// });
 
-// document.body.innerHTML = `<h1> ${assignVal.toLocaleUpperCase()} </h1>`;
-// document.write(assignVal)
+submitBtn.addEventListener("click", () => {
+  const createLi = document.createElement("li");
+  createLi.className = "item";
+  let removeBtn = document.createElement("i");
+  removeBtn.className = "remove";
+  removeBtn.setAttribute("onclick", "remoVe(event)");
+  createLi.appendChild(removeBtn);
 
-// let x = document.body;
-// let y = x.getElementsByTagName("h4");
-// console.log(y);
+  if (inputValue.value !== "") {
+    let x = inputValue.value;
+    createLi.append(x);
+    responseUl.append(createLi);
+    inputValue.value = "";
+  }
+});
 
-// y.innerHTML = ` <a class="mu-button"> Find Mee 😘 </a>`;
-
-// document.addEventListener('DOMLoadedContent', () => {
-
-let x = document.getElementById("input_val");
-let y = document.getElementById("button_sub");
-let z = document.getElementById("response");
-
-let cId = document.getElementById("items");
-
-function createDomEl() {
-  const mainVal = document.querySelector("section.form-section > div.row");
-  // let cLi = document.createElement("li");
-  const result = document.getElementById("response");
-
-  const appDiv = document.createElement("div");
-  const appVal = document.createTextNode("Add sucess");
-  const appValOne = document.createTextNode("Invalid Value");
-
-  const addVal = x.value;
-  // cLi.className = 'item';
-
-  y.addEventListener("click", () => {
-    mainVal.prepend(appDiv);
-    // cLi.append(addVal);
-    // cId.append(cLi)
-    result.textContent = addVal;
-
-    console.log(addVal);
-
-    if (x.value !== "") {
-      appDiv.className = "valid-sucess";
-      appDiv.append(appVal);
-    } else {
-      appDiv.className = "valid-invalid";
-      appDiv.append(appValOne);
-    }
-  });
+function remoVe(event) {
+  event.target.parentElement.remove();
 }
 
-createDomEl();
+const resetBtn = document.createElement("button");
+const resetBtnVal = document.createTextNode("Reset Value In The clone Element");
+resetBtn.id = "reset";
+resetBtn.append(resetBtnVal);
+createDiv.insertAdjacentElement("beforebegin", resetBtn);
 
+const resetClick = document.getElementById("reset");
 
-// console.log(cId);
-// console.log(c);
+resetClick.addEventListener("click", (e) => {
+  createDiv.innerHTML = "";
+  let cloneEl = responseUl.cloneNode(true);
+  createDiv.append(cloneEl);
 
-// let test = [].map.call(c, function(s) {
-//   s.textContent
-// });
+  e.stopImmediatePropagation();
+});
 
-// console.log(test);
+// getting Method
 
-// y.addEventListener("click", () => {
-//   ghy = x.value;
-//   var val = (ghy * 9/5) + 32;
-//   cId.innerHTML += `<li> ${val}*f </li>`;
-// });
+const dataGeting = document.querySelector(".testing-inputDOM > input");
+dataGeting.setAttribute("placeholder", "Your value Here");
+dataGeting.classList += " input-class";
 
-// console.log(c);
+const dataSelect = document.createElement("button");
+dataSelect.textContent = "add value";
+dataSelect.setAttribute(
+  "style",
+  "margin: 0 0 0 10px; text-transform: capitalize;"
+);
 
-// clr.addEventListener('click', function() {
-//   z.innerText = number(x);
-//   alert("copy Text:", h)
-// });
-// });
+dataGeting.insertAdjacentElement("afterend", dataSelect);
 
-// document.addEventListener('DOMContentLoaded', () => {
-// x.value = "😁💕💕💕"
+let dataItem = dataGeting.dataset.name;
+console.log(dataItem);
 
-// y.addEventListener('click', () =>{
-//   cId.innerHTML += `<li>${x.value}</li>`;
-// });
-// console.log(cId);
-// });
-
-// y.addEventListener('click', function(e) {
-//   e = x.value;
-//   const g = (e * 9/5) + 32;
-//   z.innerHTML = `<div>${g} </div>`;
-// });
+let joKK = () => {
+  alert("testing value");
+}
+dataSelect.addEventListener("click", joKK);
+dataSelect.addEventListener("click", () => {
+  dataGeting.classList.toggle("hidden");
+  console.log(event.target);
+});
