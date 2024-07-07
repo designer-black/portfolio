@@ -41,6 +41,7 @@
 *, *:before, *:after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
 
 body, span, a { color: var(--Mu_BodyTxtColor); background-color: var(--Mu_BodyBGColor); font-size: var(--Mu_FontSize_Base);
     font-family: var(--Mu_FontTypo_Base); font-weight: var(--Mu_FontWeight_Base); line-height: var(--Mu_LineHeight_Base); }
@@ -157,3 +158,8 @@ i.remove::before { position: relative; content: "✖"; display: inline-block; he
 
 .error { bottom: 25px; color: red; position: absolute; right: 5px;
     font-family: var(--Mu_FontTypo_Alt); font-size: 12px; }
+
+
+    table { display: table; border-collapse: collapse; border: 1px solid; margin: 0 auto; }
+    th, tr, td, tbody { border: 1px solid var(--Mu_BorderColor); padding: 4px 6px; text-align: left;
+                         }

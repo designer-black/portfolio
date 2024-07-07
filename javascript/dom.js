@@ -2,7 +2,6 @@ const inputValue = document.getElementById("input_val");
 const submitBtn = document.getElementById("button_sub");
 const responseDiv = document.getElementById("response");
 let responseUl = document.getElementById("items");
-// const responseLi = document.querySelectorAll(".items > .item");
 
 let numVal = Number(inputValue);
 const createDiv = document.createElement("div");
@@ -10,34 +9,16 @@ createDiv.className = "add-div";
 
 responseUl.insertAdjacentElement("afterend", createDiv);
 
-// Remove Button with Event
-
-// console.log(inputValue.placeholder = "Your Items");
-// console.log(typeof numVal);
-
-// let ageVal = prompt("what's your age")
-
-// inputValue.setAttribute("value", ageVal);
-// let parseIntVal = parseInt(inputValue, 10);
-// console.log(typeof parseIntVal, parseIntVal);
 let teSt = responseUl.children;
 [...teSt].forEach((item) => {
   item.style.color = "red";
 });
 
-// Array.from.teSt.forEach(element => {
-//   element.style.color = "blue";
-// });
-
-// console.log(teSt, teSt.length);
 for (let valuItem of teSt) {
   valuItem.innerHTML += `<i class="remove" onclick="remoVe(event)"></i>`;
 }
-// responseLi.forEach((val) => {
-//   console.log(val.appendChild(removeBtn));
-// });
 
-submitBtn.addEventListener("click", () => {
+function eventHandler() {
   const createLi = document.createElement("li");
   createLi.className = "item";
   let removeBtn = document.createElement("i");
@@ -51,6 +32,11 @@ submitBtn.addEventListener("click", () => {
     responseUl.append(createLi);
     inputValue.value = "";
   }
+}
+
+submitBtn.addEventListener("click", eventHandler);
+inputValue.addEventListener("keyup", (e) => {
+  if (e.key == "Enter") eventHandler();
 });
 
 function remoVe(event) {
@@ -93,7 +79,7 @@ console.log(dataItem);
 
 let joKK = () => {
   alert("testing value");
-}
+};
 dataSelect.addEventListener("click", joKK);
 dataSelect.addEventListener("click", () => {
   dataGeting.classList.toggle("hidden");

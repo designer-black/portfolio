@@ -1,9 +1,25 @@
-const formEl = document.getElementById("form_valitaion");
-const inputElName = formEl.querySelector("#name");
-const inputElEmail = formEl.querySelector("#email");
-const inputElPass = formEl.querySelector("#password");
-const inputElCpass = formEl.querySelector("#coPassword");
-const inputCheck = formEl.querySelector("#check");
+// Tratisnal way
+
+// const formEl = document.getElementById("form_valitaion");
+// const inputElName = formEl.querySelector("#name");
+// const inputElEmail = formEl.querySelector("#email");
+// const inputElPass = formEl.querySelector("#password");
+// const inputElCpass = formEl.querySelector("#coPassword");
+// const inputCheck = formEl.querySelector("#check");
+
+// Get Elements way
+
+const formEl = document.forms.muhForm;
+// const inputElName = formEl.elements.name;
+// const inputElEmail = formEl.elements.email;
+// const inputElPass = formEl.elements.password;
+// const inputElCpass = formEl.elements.coPassword;
+// const inputCheck = formEl.elements.check;
+
+// Obj Destructing way => Must Important in Programing language
+
+const { name, email, password, coPassword, check } = document.forms.muhForm.elements;
+
 
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -11,46 +27,46 @@ formEl.addEventListener("submit", (e) => {
 });
 
 function validationEl() {
-  const nameVal = inputElName.value.trim();
-  const emailVal = inputElEmail.value.trim();
-  const passVal = inputElPass.value.trim();
-  const cPassVal = inputElCpass.value.trim();
-  const checkVal = inputCheck.checked;
+  const nameVal = name.value.trim();
+  const emailVal = email.value.trim();
+  const passVal = password.value.trim();
+  const cPassVal = coPassword.value.trim();
+  const checkVal = check.checked;
 
   if (nameVal === "") {
-    setError(inputElName, "Please enter Name");
+    setError(name, "Please enter Name");
   } else {
-    setSucess(inputElName, "");
+    setSucess(name, "");
   }
 
   if (emailVal === "") {
-    setError(inputElEmail, "Please enter your email");
+    setError(email, "Please enter your email");
   } else if (!validateEmail(emailVal)) {
-    setError(inputElEmail, "Please enter valid email address");
+    setError(email, "Please enter valid email address");
   } else {
-    setSucess(inputElEmail, "");
+    setSucess(email, "");
   }
 
   if (passVal === "") {
-    setError(inputElPass, "Please enter your password");
+    setError(password, "Please enter your password");
   } else if (passVal.length > 8) {
-    setError(inputElPass, "Please enter 8 charactor");
+    setError(password, "Please enter 8 charactor");
   } else {
-    setSucess(inputElPass, "");
+    setSucess(password, "");
   }
 
   if (cPassVal === "") {
-    setError(inputElCpass, "Please enter your confirm password");
+    setError(coPassword, "Please enter your confirm password");
   } else if (passVal !== cPassVal) {
-    setError(inputElCpass, "Your password does not match");
+    setError(coPassword, "Your password does not match");
   } else {
-    setSucess(inputElCpass, "");
+    setSucess(coPassword, "");
   }
 
   if (checkVal === true) {
-    setSucess(inputCheck, "");
+    setSucess(check, "");
   } else {
-    setError(inputCheck, "Please check the feild");
+    setError(check, "Please check the feild");
   }
 }
 
